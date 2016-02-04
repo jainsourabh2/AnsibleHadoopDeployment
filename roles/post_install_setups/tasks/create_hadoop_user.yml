@@ -6,7 +6,6 @@
     with_items:
       - "/tmp"
       - "/var"
-      - "/user/{{ storm_user }}"
       - "/user/{{ hadoop_user }}"
 
   - name: Setting Permission for Hadoop /tmp and /var directories.

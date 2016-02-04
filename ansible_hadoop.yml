@@ -1,8 +1,6 @@
-#
 #-----------------------------
 #COMMON INSTALLATIONs
 #-----------------------------
-#
 
 - hosts: allnodes
   remote_user: root
@@ -11,11 +9,9 @@
     - ssh_known_hosts
     - jdk
 
-#
 #-----------------------------
 # HADOOP CLUSTER SETUP
 #-----------------------------
-#
 
 - hosts: hadoopcluster
   remote_user: root
@@ -42,4 +38,3 @@
   remote_user: root
   roles:
     - cdh5_hadoop_datanode
-
