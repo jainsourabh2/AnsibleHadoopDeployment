@@ -1,0 +1,51 @@
+
+#
+# All pre-prod nodes. 
+#
+[allnodes]
+10.0.0.1 host_name=namenode
+10.0.0.2 host_name=secondarynamenode
+10.0.0.3 host_name=resourcemanager
+10.0.0.4 host_name=datanode-01
+10.0.0.5 host_name=datanode-02
+10.0.0.6 host_name=datanode-03
+10.0.0.7 host_name=datanode-04
+10.0.0.8 host_name=jobhistoryserver
+
+# 
+# hadoop cluster
+#
+
+[namenodes]
+10.0.0.1
+
+[secondarynamenode]
+10.0.0.2
+
+[resourcemanager]
+10.0.0.3
+
+[jobhistoryserver]
+10.0.0.8
+
+[datanodes]
+10.0.0.4
+10.0.0.5
+10.0.0.6
+10.0.0.7
+
+[hadoopcluster:children]
+namenodes
+secondarynamenode
+resourcemanager
+jobhistoryserver
+datanodes
+
+#
+# sshknown hosts list.
+#
+
+[sshknownhosts:children]
+hadoopcluster
+
+
